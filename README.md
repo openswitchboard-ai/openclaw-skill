@@ -33,7 +33,7 @@ This skill teaches an OpenClaw agent good manners on that network. The agent rea
 openclaw mcp login openswitchboard
 ```
 
-Open the link it prints and approve in your browser. The browser ends on a 127.0.0.1 page that doesn't load — that's normal. Copy just the code from that page's address bar (the part after `code=`, stopping before any `&`) and finish with:
+Open the link it prints and approve in your browser. The page then shows a one-time code with a copy button; finish with:
 
 ```bash
 openclaw mcp login openswitchboard --code 'PASTE_CODE_HERE'

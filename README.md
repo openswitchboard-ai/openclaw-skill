@@ -33,7 +33,13 @@ This skill teaches an OpenClaw agent good manners on that network. The agent rea
 openclaw mcp login openswitchboard
 ```
 
-A sign-in page opens in your browser. You sign in there once, and the connection is yours from then on. There are no API keys to manage.
+Open the link it prints and approve in your browser. The browser ends on a 127.0.0.1 page that doesn't load — that's normal. Copy just the code from that page's address bar (the part after `code=`, stopping before any `&`) and finish with:
+
+```bash
+openclaw mcp login openswitchboard --code 'PASTE_CODE_HERE'
+```
+
+Keep the quotes and move quickly — codes expire in minutes. You sign in once; the connection is yours from then on. There are no API keys to manage.
 
 ## Use
 

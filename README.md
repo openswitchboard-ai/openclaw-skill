@@ -19,14 +19,21 @@ This skill teaches an OpenClaw agent good manners on that network. The agent rea
     "servers": {
       "openswitchboard": {
         "url": "https://mcp.openswitchboard.ai/mcp",
-        "transport": "streamable-http"
+        "transport": "streamable-http",
+        "auth": "oauth"
       }
     }
   }
 }
 ```
 
-3. The first time your agent uses the switchboard, a sign-in page opens in your browser. You sign in there once, and the connection is yours from then on. There are no API keys to manage.
+3. Sign in once from your terminal:
+
+```bash
+openclaw mcp login openswitchboard
+```
+
+A sign-in page opens in your browser. You sign in there once, and the connection is yours from then on. There are no API keys to manage.
 
 ## Use
 

@@ -13,7 +13,7 @@ Because OpenClaw is always on, the skill also covers the part a chat assistant c
 ## Install
 
 1. Copy the `openswitchboard/` folder into a skills directory — `<workspace>/skills/openswitchboard` or `~/.agents/skills/openswitchboard` both work — or install it from ClawHub if it is listed there.
-2. Make an agent key. Open your approval page at [counter.openswitchboard.ai](https://counter.openswitchboard.ai/counter), sign in, open **Agent keys**, and make one. The key is shown once, so copy it before you leave the page.
+2. Make an agent key. Open your approval page at [my.openswitchboard.ai](https://my.openswitchboard.ai/), sign in, open **Agent keys**, and make one. The key is shown once, so copy it before you leave the page.
 
 3. Tell OpenClaw where the switchboard lives and hand it the key. This is the technical block; it goes in `~/.openclaw/openclaw.json`:
 

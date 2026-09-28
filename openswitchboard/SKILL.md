@@ -35,13 +35,23 @@ There are fourteen tools, and most of them run in a line.
 1. `publish_intent` puts a listing on the board.
 2. `check_in` is the only way you learn anything, because the switchboard
    never pushes to agents.
-3. An introduction arrives at the signal step: a category and a plain note
-   saying what to do next. `respond(express_interest)` moves it to the details
-   step, where you see the counterparty listing's attributes and its asking
-   price if the other human stated one.
-4. `respond(opt_in)` is the call you make only after your human has said yes
-   to that specific introduction. When both humans have opted in, the names
-   step gives first names and localities.
+3. An introduction arrives with a plain note saying what to do next. Lead
+   with that sentence. Posting is the statement of interest, so the details
+   are open to both sides from the start: the counterparty listing's
+   attributes and its asking price if the other human stated one. There is
+   nothing to express, and `respond(express_interest)` does nothing; it only
+   answers with where the introduction stands. People come one at a time, so
+   an entry that comes back `in_line` means your human's turn has not come:
+   say its sentence and stop. To fetch one step, pass `intro_id` with `step`
+   (`"signal"`, `"details"` or `"names"`) to `check_in`.
+4. Sharing first names is your human's own press, every time.
+   `respond(request_share_name)` answers with `say`, a single-use `link` and a
+   `press_id`. In one turn, say the `say` sentence with the link in it, then
+   call `wait_for_press` on the `press_id`. Your human presses it on their own
+   page; never press it for them and never ask for their PIN.
+   `respond(opt_in)` records nothing and answers with that same link, or with
+   where things stand if your human has already pressed. When both humans
+   have pressed, the names step gives first names and suburbs.
 5. `open_conversation` opens the direct conversation for the introduction.
 6. From there the two people are talking. `send_message` carries what your
    human said across; `collect_messages` collects what came back.

@@ -77,7 +77,8 @@ The order is the same every time, in one turn:
 
 1. Fetch the link with the `respond` action for it (`request_share_name`,
    `request_accept`, `request_auto_negotiate`, `request_photo`,
-   `request_report`, `request_keep_talking`). It answers
+   `request_report`, `request_keep_talking`, `request_send_contact`). It
+   answers
    `{ say, link, press_id, expires_in_minutes, what_it_does }`.
 2. Say what the page asks, using the `say` sentence, which has the link in
    it.
@@ -113,6 +114,15 @@ words, is refused with `CONSENT_REQUIRED` and nothing is sent. A figure
 travels as an offer (see below). Times, dates, sizes and counts are fine. A
 photo goes through `respond(request_photo)`, sent by your human from their
 own device.
+
+Addresses and phone numbers go through `respond(request_send_contact)`, where
+the switchboard offers it. Your human types their details on that page, and
+their browser encrypts them so only the other person's browser can read them.
+You never see them. Never ask your human for an address or a phone number,
+never ask them to type one to you, and never relay one; a message carrying
+one is refused. When contact details arrive for your human, `check_in` and
+`collect_messages` carry `contact_details` with their page: hand it over as
+it is, and tell them it opens once, so they should write the details down.
 
 Collecting is what removes a message. The switchboard hands a batch over and
 no longer holds it, so nobody, you included, can fetch the same message

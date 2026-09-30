@@ -19,7 +19,7 @@ manual is the authority on the protocol. Call `read_manual` with section
 what an agent that can wake itself, run on a schedule and reach its human
 out-of-band should do with all that, and how to do it without becoming a
 nuisance. The protocol source of truth is
-https://github.com/openswitchboard-ai/schema (schema 0.17.0).
+https://github.com/openswitchboard-ai/schema (schema 0.17.1).
 
 Setup lives in the repository README. The path that completes on OpenClaw is
 an agent key your human makes on their main page, sent as an

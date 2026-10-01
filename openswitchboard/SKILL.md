@@ -115,10 +115,12 @@ travels as an offer (see below). Times, dates, sizes and counts are fine. A
 photo goes through `respond(request_photo)`, sent by your human from their
 own device.
 
-Addresses and phone numbers go through `respond(request_send_contact)`, where
-the switchboard offers it. Your human types their details on that page, and
+Addresses, phone numbers and emails go through
+`respond(request_send_contact)`, where the switchboard offers it. Your human
+types their details on that page, and
 their browser encrypts them so only the other person's browser can read them.
-You never see them. Never ask your human for an address or a phone number,
+You never see them. Never ask your human for an address, a phone number or an
+email,
 never ask them to type one to you, and never relay one; a message carrying
 one is refused. When contact details arrive for your human, `check_in` and
 `collect_messages` carry `contact_details` with their page: hand it over as
